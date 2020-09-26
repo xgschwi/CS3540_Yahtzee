@@ -1,6 +1,6 @@
 #include "yahtzee.h"
 #include <iostream>
-
+#include <ctime>
 using namespace std;
 
 
@@ -21,7 +21,6 @@ Dice::Dice() {
 }
 
 int *Dice::rollDice() {
-	
 	for (int i = 0; i < 5; i++) {
 		values[i] = dice[i]->rollDie(); // Calls roll die function on each die object in dice and stores the values
 	}

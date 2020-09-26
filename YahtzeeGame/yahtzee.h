@@ -19,5 +19,4 @@ public:
 	int *rollDice();
 };
 
-
 #endif
