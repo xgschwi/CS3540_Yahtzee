@@ -1,0 +1,2 @@
+if (cin = "exit")
+    close();
