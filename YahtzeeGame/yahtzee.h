@@ -41,9 +41,8 @@ public:
 	ScoreCard();
 	~ScoreCard();
 
-	void availableScores(int* vals);
-	void chooseScoreType(char command, int* vals);
-
+	void chooseScores(int* vals);
+	
 	int aceF(int num);
 	int twoF(int num);
 	int threeF(int num);
