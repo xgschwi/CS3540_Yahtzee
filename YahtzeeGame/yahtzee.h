@@ -64,7 +64,7 @@ class Game {
 private:
 public:
 
-Play(); //begins the game
+play(); //begins the game
 
 };
 #endif
