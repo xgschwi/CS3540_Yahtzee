@@ -17,10 +17,17 @@ int main() {
 
 	for (int i = 0; i < 5; i++) cout << values[i]; // Demos the roll dice function
 
-	if (cin = "exit") //Exits out of the program
+<<<<<<< YahtzeeGame/yahtzeeDriver.cpp
+	if (answer = "scoreboards"){ //shows scores
+		while (int i = 0; i < 5; i++){
+			cout << values[i];
+		}
+	}
+=======
+	if else (cin = "exit") //Exits out of the program
     close();
 
-	if (cin = "restart"){
+	if else (cin = "restart"){
 		cout << "Are you sure you want to restart the game? Input Y to restart; input anything else to continue." << endl;
 		cin << answer;
 		if (answer = 'Y'){
@@ -33,4 +40,5 @@ int main() {
 
 	}
 
+>>>>>>> YahtzeeGame/yahtzeeDriver.cpp
 }
