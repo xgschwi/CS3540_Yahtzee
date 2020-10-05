@@ -1,5 +1,3 @@
-
-
 #include "yahtzee.h"
 #include <iostream>
 #include <ctime>
@@ -17,13 +15,13 @@ int main() {
 
 	for (int i = 0; i < 5; i++) cout << values[i]; // Demos the roll dice function
 
-<<<<<<< YahtzeeGame/yahtzeeDriver.cpp
+
 	if (answer = "scoreboards"){ //shows scores
 		while (int i = 0; i < 5; i++){
 			cout << values[i];
 		}
 	}
-=======
+
 	if else (cin = "exit") //Exits out of the program
     close();
 
