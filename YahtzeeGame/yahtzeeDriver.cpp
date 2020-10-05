@@ -18,7 +18,7 @@ int main() {
 
 	for (int i = 0; i < 5; i++) cout << values[i]; // Demos the roll dice function
 
-	if (answer = "scoreboards"){ //shows scores
+	if else (answer = "scoreboards"){ //shows scores
 		while (int i = 0; i < 5; i++){
 			cout << values[i];
 		}
