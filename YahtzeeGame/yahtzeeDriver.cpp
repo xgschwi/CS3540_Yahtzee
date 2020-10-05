@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-	string answer;
+	//string answer;
 	unsigned int seed = time(0); // Or use NULL
 	srand(seed); // Random numbers are seeded once for the rollDie function (srand(time(0)))
 
@@ -16,7 +16,7 @@ int main() {
 	for (int i = 0; i < 5; i++) cout << values[i]; // Demos the roll dice function
 
 
-	if (answer = "scoreboards"){ //shows scores
+	/*if (answer = "scoreboards"){ //shows scores
 		while (int i = 0; i < 5; i++){
 			cout << values[i];
 		}
@@ -36,7 +36,7 @@ int main() {
 			break;
 		}
 
-	}
+	}*/
 
->>>>>>> YahtzeeGame/yahtzeeDriver.cpp
+
 }
