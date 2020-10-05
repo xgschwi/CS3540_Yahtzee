@@ -19,4 +19,44 @@ public:
 	int *rollDice();
 };
 
+class ScoreCard {
+private:
+	int score;
+
+	bool aceb;
+	bool twob;
+	bool threeb;
+	bool fourb;
+	bool fiveb;
+	bool sixb;
+
+	bool threeKb;
+	bool fourKb;
+	bool fullHb;
+	bool smallb;
+	bool largeb;
+	bool yahtzeeb;
+	bool chanceb;
+public:
+	ScoreCard();
+	~ScoreCard();
+
+	void chooseScores(int* vals);
+	
+	int aceF(int num);
+	int twoF(int num);
+	int threeF(int num);
+	int fourF(int num);
+	int fiveF(int num);
+	int sixF(int num);
+
+	int threeKindF(int* vals);
+	int fourKindF(int* vals);
+	int fullHouseF();
+	int smallF();
+	int largeF();
+	int yahtzeeF();
+	int chanceF(int* vals);
+
+};
 #endif
