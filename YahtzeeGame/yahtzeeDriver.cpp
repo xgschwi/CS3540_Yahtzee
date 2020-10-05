@@ -9,7 +9,6 @@ if (cin = "exit")
 using namespace std;
 
 int main() {
-	string answer; 
 	unsigned int seed = time(0); // Or use NULL
 	srand(seed); // Random numbers are seeded once for the rollDie function (srand(time(0)))
 
