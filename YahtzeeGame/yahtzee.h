@@ -59,4 +59,11 @@ public:
 	int chanceF(int* vals);
 
 };
+
+class Game {
+private:
+public:
+
+string choice; //choose which game you're playing
+};
 #endif
