@@ -233,3 +233,13 @@ int ScoreCard::chanceF(int* vals) {
 	}
 	return sum;
 }
+
+Game::Play(){
+	int *v; //gets the arrays from the scores
+
+	cout << "Welcome to the game! Let's play a friendly, custom game of Yahtzee! Let's start you off with some rolls..."
+	v=rollDice(); //returns array into pointer
+	chooseScores(v);
+
+	return 0; //since this is the last class, nothing else would need to be returned
+}
