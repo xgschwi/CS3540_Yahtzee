@@ -64,6 +64,7 @@ class Game {
 private:
 public:
 
+Play(); //begins the game
 string choice; //choose which game you're playing
 };
 #endif
