@@ -13,16 +13,16 @@ int Die::rollDie() {
 }
 
 Dice::Dice() {
-	int values[] = { 1, 1, 1, 1, 1 };
 
-	dice = new Die*[5]; // Dice can hold 5 allocated Die spaces
+
+	dice = new Die * [5]; // Dice can hold 5 allocated Die spaces
 
 	for (int i = 0; i < 5; i++) dice[i] = new Die; // Initializes array of Dice with blank die
 }
 
-int *Dice::rollDice() {
+int* Dice::rollDice() {
 	for (int i = 0; i < 5; i++) {
-		values[i] = dice[i]->rollDie(); // Calls roll die function on each die object in dice and stores the values
+		this->values[i] = dice[i]->rollDie(); // Calls roll die function on each die object in dice and stores the values
 	}
 
 	return values;
