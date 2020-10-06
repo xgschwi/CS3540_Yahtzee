@@ -1,0 +1,2 @@
+First, the game will ask you if you wish to play: pressing 1 will start the game, while pressing 2 will read out the laconic intructions.
+The dice will be rolled randomly once you begin, then once they finish rolling you'll be shown the score. From there you'll be able to see what score you can keep; once you have done that the game will move on to the next score, and so on until the game is done.
