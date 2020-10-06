@@ -13,16 +13,16 @@ int Die::rollDie() {
 }
 
 Dice::Dice() {
-	int values[] = { 1, 1, 1, 1, 1 };
 
-	dice = new Die*[5]; // Dice can hold 5 allocated Die spaces
+
+	dice = new Die * [5]; // Dice can hold 5 allocated Die spaces
 
 	for (int i = 0; i < 5; i++) dice[i] = new Die; // Initializes array of Dice with blank die
 }
 
-int *Dice::rollDice() {
+int* Dice::rollDice() {
 	for (int i = 0; i < 5; i++) {
-		values[i] = dice[i]->rollDie(); // Calls roll die function on each die object in dice and stores the values
+		this->values[i] = dice[i]->rollDie(); // Calls roll die function on each die object in dice and stores the values
 	}
 
 	return values;
@@ -234,12 +234,17 @@ int ScoreCard::chanceF(int* vals) {
 	return sum;
 }
 
-Game::Play(){
-	int *v; //gets the arrays from the scores
-
-	cout << "Welcome to the game! Let's play a friendly, custom game of Yahtzee! Let's start you off with some rolls..."
-	v=rollDice(); //returns array into pointer
-	chooseScores(v);
-
+int Game::play() {
+	int* v;		//gets the arrays from the scores
+	int turns = 0;
+	scoreCard = ScoreCard();
+	cout << "Welcome to the game! Let's play a friendly, custom game of Yahtzee! Let's start you off with some rolls...";
+	while (turns != 13)
+	{
+		cout << "\n\nRound: " << turns + 1 << "/13" << endl;
+		v = rollDice(); //returns array into pointer
+		scoreCard.chooseScores(v);
+		turns++;
+	}
 	return 0; //since this is the last class, nothing else would need to be returned
 }
