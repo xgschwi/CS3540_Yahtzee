@@ -1,4 +1,5 @@
 #include "yahtzee.h"
+#include "HighScores.h"
 #include <iostream>
 #include <ctime>
 
@@ -22,14 +23,37 @@ void start() {
 	}
 
 }
-		
-int main() {
-	unsigned int seed = time(0); // Or use NULL
-	srand(seed); // Random numbers are seeded once for the rollDie function (srand(time(0)))
-	start();
-	Dice dice;
-	int* values; // Holds array of dice face values
-	values = dice.rollDice(); // Dont forget to re-roll
 
-	for (int i = 0; i < 5; i++) cout << values[i]; // Demos the roll dice function
+int main() {
+	int games = 0;
+	Game g;
+	HighScores sbo;
+	string answer;
+	while (games < 5)
+	{
+		cout << "~~~Welcome To Yahtzee!~~~\n\n";
+		unsigned int seed = time(0);							// Or use NULL
+		srand(seed);											// Random numbers are seeded once for the rollDie function (srand(time(0)))
+		start();
+		Dice dice;
+		int* values;											// Holds array of dice face values
+		values = dice.rollDice();								// Dont forget to re-roll
+
+		int finalScore = g.getFinalScore();
+
+		cout << "Would you like to add your score of " << finalScore << " to the scoreboard? (Yes/No)" << endl;
+		cin >> answer;
+		if (answer == "Yes" || answer == "yes")
+		{
+			sbo.ScoreBoard(finalScore);
+		}
+		else
+		{
+			cout << "\n\n That concludes the game! I hope you enjoyed playing, and congratulations to the winner!\n\n";
+			return 0;
+		}
+		games++;
+	}
+	cout << "\n\n That concludes the game! I hope you enjoyed playing, and congratulations to the winner!\n\n";
+	return 0;
 }
