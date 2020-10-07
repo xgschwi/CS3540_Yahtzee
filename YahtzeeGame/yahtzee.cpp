@@ -58,6 +58,8 @@ void ScoreCard::chooseScores(int* values) {
 	char type;
 	int a, b, c, d, e, f = 0;
 
+	cout << "Your Roll Was: ";
+
 	for (int i = 0; i < 5; i++) {
 		if (values[i] == 1) {
 			if (aceb) ace = true;
@@ -86,7 +88,12 @@ void ScoreCard::chooseScores(int* values) {
 			f++;
 		}
 
-		// Other if statements for other score types
+	}
+
+	for(int j = 0; j < 5; j++)
+	{
+		sort(values, values + 5;
+		cout << values[j] << " ";
 	}
 
 	if (a == 5) yahtzee, fourK, threeK = true; // Change all to false or initialize false and change everything for values
