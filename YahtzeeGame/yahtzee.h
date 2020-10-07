@@ -22,8 +22,6 @@ public:
 
 class ScoreCard {
 private:
-	int score;
-
 	bool aceb;
 	bool twob;
 	bool threeb;
@@ -41,6 +39,8 @@ private:
 public:
 	ScoreCard();
 	~ScoreCard();
+
+	int score;
 
 	void chooseScores(int* vals);
 
@@ -61,10 +61,12 @@ public:
 
 };
 
-class Game :public Dice, public ScoreCard {
+class Game:public Dice, public ScoreCard{
 private:
 	ScoreCard scoreCard;
 public:
 	int play(); //begins the game
+	int getFinalScore();
 };
 #endif
+
