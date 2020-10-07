@@ -6,7 +6,6 @@
 using namespace std;
 
 int finalScore = 0;
-//bool chanceSelected = true;
 
 Die::Die() {
 	val = 1;
@@ -51,7 +50,6 @@ ScoreCard::ScoreCard() {
 }
 
 ScoreCard::~ScoreCard() {
-	//delete this;
 }
 
 void ScoreCard::chooseScores(int* values) {
