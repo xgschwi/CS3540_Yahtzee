@@ -1,8 +1,12 @@
 #include "yahtzee.h"
 #include <iostream>
 #include <ctime>
+#include <algorithm>
+#include <string>
 using namespace std;
 
+int finalScore = 0;
+//bool chanceSelected = true;
 
 Die::Die() {
 	val = 1;
@@ -13,7 +17,7 @@ int Die::rollDie() {
 }
 
 Dice::Dice() {
-
+	
 
 	dice = new Die * [5]; // Dice can hold 5 allocated Die spaces
 
@@ -47,16 +51,21 @@ ScoreCard::ScoreCard() {
 }
 
 ScoreCard::~ScoreCard() {
-	delete this;
+	//delete this;
 }
 
 void ScoreCard::chooseScores(int* values) {
-	cout << "Here are all of the available scoring categories: \n";
-	bool ace, two, three, four, five, six, flag = false;
-	bool twoK, threeK, fourK, fullH, small, large, yahtzee, chance = false;
+	bool ace = false, two = false, three = false, four = false, five = false, six = false, flag = true;
+	bool twoK = false, threeK = false, fourK = false, fullH = false, small = false, large = false, yahtzee = false, chance = false;
 
-	char type;
-	int a, b, c, d, e, f = 0;
+	string type;
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	int e = 0;
+	int f = 0;
+	int numOfOptions = 0;			//Allow a counter to be set in place if none of the options are avaliable
 
 	cout << "Your Roll Was: ";
 
@@ -64,7 +73,6 @@ void ScoreCard::chooseScores(int* values) {
 		if (values[i] == 1) {
 			if (aceb) ace = true;
 			a++;
-
 		}
 		if (values[i] == 2) {
 			if (twob) two = true;
@@ -74,7 +82,6 @@ void ScoreCard::chooseScores(int* values) {
 			if (threeb) three = true;
 			c++;
 		}
-
 		if (values[i] == 4) {
 			if (fourb) four = true;
 			d++;
@@ -87,90 +94,89 @@ void ScoreCard::chooseScores(int* values) {
 			if (sixb) six = true;
 			f++;
 		}
-
 	}
 
-	for(int j = 0; j < 5; j++)
+	for (int j = 0; j < 5; j++)
 	{
-		sort(values, values + 5;
+		sort(values, values + 5);
 		cout << values[j] << " ";
 	}
 
-	if (a == 5) yahtzee, fourK, threeK = true; // Change all to false or initialize false and change everything for values
-	else if (a > 3) fourK, threeK = true;
-	else if (a > 2) threeK = true;
-	else if (a > 1) twoK = true;
 
-	if (b == 5) yahtzee, fourK, threeK = true;
-	else if (b > 3) fourK, threeK = true;
-	else if (b > 2) threeK = true;
-	else if (!twoK && b > 1) twoK = true;
-
-	if (c == 5) yahtzee, fourK, threeK = true;
-	else if (c > 3) fourK, threeK = true;
-	else if (c > 2) threeK = true;
-	else if (!twoK && c > 1) twoK = true;
-
-	if (d == 5) yahtzee, fourK, threeK = true;
-	else if (d > 3) fourK, threeK = true;
-	else if (d > 2) threeK = true;
-	else if (d > 2) threeK = true;
-	else if (!twoK && d > 1) twoK = true;
-
-	if (e == 5) yahtzee, fourK, threeK = true;
-	else if (e > 3) fourK, threeK = true;
-	else if (e > 2) threeK = true;
-	else if (!twoK && e > 1) twoK = true;
-
-
-	if (f == 5) yahtzee, fourK, threeK = true;
-	else if (f > 3) fourK, threeK = true;
-	else if (f > 2) threeK = true;
-	else if (f > 1) twoK = true;
-	else if (!twoK && f > 1) twoK = true;
-
-	if (!threeK && !twoK) fullH = true;
-
-	
-	if (values[0] = 1 && values[1] == 2 && values[2] == 3 && values[3] == 4 && values[4] == 5) large = true;
-	else if (values[1] == 2 && values[2] == 3 && values[3] == 4 && values[4] == 5 && values[5] == 6) large = true;
-	else if (values[0] = 1 && values[1] == 2 && values[2] == 3 && values[3] == 4) small = true;
-	else if (values[1] == 2 && values[2] == 3 && values[3] == 4 && values[4] == 5) small = true;
-	else if (values[2] == 3 && values[3] == 4 && values[4] == 5 && values[5] == 6) small = true;
-
-
-	if (ace) cout << "Aces: a\n";
-	if (two) cout << "Twos: b\n";
-	if (three) cout << "Threes: c\n";
-	if (four) cout << "Fours: d\n" ;
-	if (five) cout << "Fives: e\n";
-	if (six) cout << "Sixes: f\n";
-	if (threeK) cout << "Three of a Kind: g\n";
-	if (fourK) cout << "Four of a Kind: h\n";
-	if (fullH) cout << "Full House: i\n";
-	if (small) cout << "Small Straight: j\n";
-	if (large) cout << "Large Straight: k\n";
-	if (yahtzee) cout << "Yahtzee: l\n";
-	if (chance) cout << "Chance: m\n";
-
-	cout << endl << "What is your choice? ";
-	while (flag) {
-		cin >> type;
-		if (type == 'a' && ace) { aceb = false; score += aceF(a); flag = false; }
-		else if (type == 'b' && two) { twob = false; score += twoF(b); flag = false;}
-		else if (type == 'c' && three) { threeb = false; score += threeF(c); flag = false;}
-		else if (type == 'd' && four) { fourb = false; score += fourF(d); flag = false;}
-		else if (type == 'e' && five) { fiveb = false; score += fiveF(e); flag = false;}
-		else if (type == 'f' && six) { sixb = false; score += sixF(f); flag = false;}
-		else if (type == 'g' && threeK) { threeKb = false; score += threeKindF(values); flag = false;}
-		else if (type == 'h' && fourK) { fourKb = false; score += fourKindF(values); flag = false; }
-		else if (type == 'i' && fullH) { fullHb = false; score += fullHouseF(); flag = false;}
-		else if (type == 'j' && small) { smallb = false; score += smallF(); flag = false;}
-		else if (type == 'k' && large) { largeb = false; score += largeF(); flag = false;}
-		else if (type == 'l' && yahtzee) { yahtzeeb = false; score += yahtzeeF(); flag = false;}
-		else if (type == 'm' && chance) { chanceb = false; score += chanceF(values); flag = false;}
-		else cout << "Invalid input please try again: ";
+	cout << endl;
+	if ((a >= 3 || b >= 3 || c >= 3 || d >= 3 || e >= 3|| f >= 3) && threeKb)		//three of a kind
+	{
+		threeK = true;
 	}
+	if ((a >= 4 || b >= 4 || c >= 4 || d >= 4 || e >= 4 || f >= 4) && fourKb)		//four of a kind
+	{
+		fourK = true;
+	}
+	if (((a == 3 || b == 3 || c == 3 || d == 3 || e == 3 || f== 3) && (a == 2 || b == 2 || c == 2 || d == 2 || e == 2 || f == 2)) && fullHb)		//Full house
+	{
+		fullH = true;
+	}
+	if ((((a && b && c && d) > 0) || ((b && c && d && e) > 0) || ((c && d && e && f) > 0)) && smallb)		//Small Straight
+	{
+		small = true;
+	}
+	if (((a && b && c && d && e) || (b && c && d && e && f)) && largeb)		//Large Straight
+	{
+		large = true;
+	}
+	if ((a == 5 || b == 5 || c == 5 || d == 5 || e == 5 || f == 5) && yahtzeeb)		//Yahtzee
+	{
+		yahtzee = true;
+	}
+	if (chanceb)		//Chance
+	{
+		chance = true;
+	}
+	cout << "Here are all of the available scoring categories: \n";
+	if (ace)		{ numOfOptions++; cout << "1.  Aces: \n"; }
+	if (two)		{ numOfOptions++; cout << "2.  Twos: \n"; }
+	if (three)		{ numOfOptions++; cout << "3.  Threes: \n"; }
+	if (four)		{ numOfOptions++; cout << "4.  Fours: \n"; }
+	if (five)		{ numOfOptions++; cout << "5.  Fives: \n"; }
+	if (six)		{ numOfOptions++; cout << "6.  Sixes: \n"; }
+	if (threeK)		{ numOfOptions++; cout << "7.  Three of a Kind: \n"; }
+	if (fourK)		{ numOfOptions++; cout << "8.  Four of a Kind: \n"; }
+	if (fullH)		{ numOfOptions++; cout << "9.  Full House: \n"; }
+	if (small)		{ numOfOptions++; cout << "10. Small Straight: \n"; }
+	if (large)		{ numOfOptions++; cout << "11. Large Straight: \n"; }
+	if (yahtzee)	{ numOfOptions++; cout << "12. Yahtzee: \n"; }
+	if (chance)		{ numOfOptions++; cout << "13. Chance: \n"; }
+
+	while (flag) {
+		if (numOfOptions == 0)
+		{
+			int skip;
+			cout << "Looks like you're out of options! Please press 0 to go to the next round. \n\n";
+			flag = false;
+			cin >> skip;
+		}
+		else {
+			cout << endl << "What is your choice? ";
+			cin >> type;
+			if (type == "1" && ace) { aceb = false; ace = false;  score += aceF(a); flag = false; }
+			else if (type == "2" && two) { twob = false; two = false; score += twoF(b); flag = false; }
+			else if (type == "3" && three) { threeb = false; three = false; score += threeF(c); flag = false; }
+			else if (type == "4" && four) { fourb = false; four = false; score += fourF(d); flag = false; }
+			else if (type == "5" && five) { fiveb = false; five = false; score += fiveF(e); flag = false; }
+			else if (type == "6" && six) { sixb = false; six = false; score += sixF(f); flag = false; }
+			else if (type == "7" && threeK) { threeKb = false; threeK = false; score += threeKindF(values); flag = false; }
+			else if (type == "8" && fourK) { fourKb = false; fourK = false; score += fourKindF(values); flag = false; }
+			else if (type == "9" && fullH) { fullHb = false; fullH = false; score += fullHouseF(); flag = false; }
+			else if (type == "10" && small) { smallb = false; small = false; score += smallF(); flag = false; }
+			else if (type == "11" && large) { largeb = false; large = false; score += largeF(); flag = false; }
+			else if (type == "12" && yahtzee) { yahtzeeb = false; yahtzee = false; score += yahtzeeF(); flag = false; }
+			else if (type == "13" && chance) { chanceb = false; chance = false; chanceb = false;  score += chanceF(values); flag = false; }
+
+			else cout << "Invalid input please try again. ";
+		}
+	}
+	cout << "Your current Score is: " << score << endl;
+	finalScore = score;
 }
 
 int ScoreCard::aceF(int num) {
@@ -244,14 +250,20 @@ int ScoreCard::chanceF(int* vals) {
 int Game::play() {
 	int* v;		//gets the arrays from the scores
 	int turns = 0;
-	scoreCard = ScoreCard();
-	cout << "Welcome to the game! Let's play a friendly, custom game of Yahtzee! Let's start you off with some rolls...";
+	ScoreCard scoreCard;
+	cout << "\nWelcome to the game! Let's play a friendly, custom game of Yahtzee! Let's start you off with some rolls...";
 	while (turns != 13)
 	{
 		cout << "\n\nRound: " << turns + 1 << "/13" << endl;
-		v = rollDice(); //returns array into pointer
+		v = rollDice();							//returns array into pointer
 		scoreCard.chooseScores(v);
 		turns++;
 	}
-	return 0; //since this is the last class, nothing else would need to be returned
+	return 0;				//since this is the last class, nothing else would need to be returned
+}
+
+int Game::getFinalScore()		//no params, returns the final score
+{
+	cout << finalScore << endl;
+	return finalScore;
 }
