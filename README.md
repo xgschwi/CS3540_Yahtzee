@@ -14,5 +14,8 @@ First, the game will ask you if you wish to play: pressing 1 will start the game
 The dice will be rolled randomly once you begin, then once they finish rolling you'll be shown the score. From there you'll be able to see what score you can keep; once you have done that the game will move on to the next score, and so on until the game is done.
 
 ***HOW TO MODIFY***
-Most of the most important functions are located within the chooseScore class; thus, if you would want to modify the game to perhaps look for more scores, change what some scores mean, or whatever else you wish to do, that's the place to go first. After that, you'll want to check out the game class, since that's what calls it, and then the driver, since that's where the user interacts with the whole thing.
+Most of the most important functions are located within the chooseScore class; thus, if you would want to modify the game to perhaps look for more scores, change what some scores mean, or whatever else you wish to do, that's the place to go first. After that, you'll want to check out the game class, since that's what calls it, and then the driver, since that's where the user interacts with the whole thing. Most of the class definitions are placed in yahtzee.h and yahtzee.cpp for the sake of promoting merge conflicts which were necessary for this project. Under normal circumstances, each class would typically be worked on in parallel through one header and cpp file per class. Evidence of merge conflict below:
+
+
+[Link to merge conflict evidence](https://falconbgsu-my.sharepoint.com/:i:/g/personal/xgschwi_bgsu_edu/Ef5NJqH8vPBAtjjCLZEVxFcBTnP-qbI3Hw0zlKiycduG0w?e=p3pdcu)
 
