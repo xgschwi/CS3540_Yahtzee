@@ -138,10 +138,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="HighScores.cpp" />
     <ClCompile Include="yahtzee.cpp" />
     <ClCompile Include="yahtzeeDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HighScores.h" />
     <ClInclude Include="yahtzee.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

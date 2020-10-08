@@ -1,3 +1,7 @@
-﻿  yahtzeeDriver.cpp
-C:\Users\Xavie\Desktop\cs3540_fa2020_a04_g08\YahtzeeGame\yahtzeeDriver.cpp(8,20): warning C4244: 'initializing': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  HighScores.cpp
+  yahtzee.cpp
+C:\Users\Xavie\Desktop\cs3540_fa2020_a04_g08\YahtzeeGame\yahtzee.cpp(123,5): warning C4804: '>': unsafe use of type 'bool' in operation
+  yahtzeeDriver.cpp
+C:\Users\Xavie\Desktop\cs3540_fa2020_a04_g08\YahtzeeGame\yahtzeeDriver.cpp(37,21): warning C4244: 'initializing': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
   YahtzeeGame.vcxproj -> C:\Users\Xavie\Desktop\cs3540_fa2020_a04_g08\YahtzeeGame\Debug\YahtzeeGame.exe

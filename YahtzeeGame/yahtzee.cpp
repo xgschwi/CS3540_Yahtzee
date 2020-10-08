@@ -1,3 +1,5 @@
+// Written by Xavier Gschwind, Nicholas McBride, and Cameron Taylor
+
 #include "yahtzee.h"
 #include <iostream>
 #include <ctime>
@@ -23,6 +25,10 @@ Dice::Dice() {
 	for (int i = 0; i < 5; i++) dice[i] = new Die; // Initializes array of Dice with blank die
 }
 
+Dice::~Dice() {
+	for (int i = 0; i < 5; i++) delete dice[i]; // Delete dynamic allocation
+	delete dice;
+}
 int* Dice::rollDice() {
 	for (int i = 0; i < 5; i++) {
 		this->values[i] = dice[i]->rollDie(); // Calls roll die function on each die object in dice and stores the values

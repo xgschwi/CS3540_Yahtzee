@@ -1,3 +1,5 @@
+// Written by Xavier Gschwind, Nicholas McBride, and Cameron Taylor
+
 #ifndef YAHTZEE
 #define YAHTZEE
 
@@ -12,11 +14,11 @@ public:
 
 class Dice {
 private:
-	//int values[5]; // Holds the face values of all the die
 	int values[5] = { 1, 1, 1, 1 , 1 };
 	Die** dice; // pointer to die objects
 public:
 	Dice();
+	~Dice();
 	int* rollDice();
 };
 

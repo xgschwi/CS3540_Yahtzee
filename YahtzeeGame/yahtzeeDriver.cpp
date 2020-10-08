@@ -1,3 +1,5 @@
+// Written by Xavier Gschwind, Nicholas McBride, and Cameron Taylor
+
 #include "yahtzee.h"
 #include "HighScores.h"
 #include <iostream>
