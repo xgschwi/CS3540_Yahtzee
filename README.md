@@ -17,9 +17,9 @@ The dice will be rolled randomly once you begin, then once they finish rolling y
 Most of the most important functions are located within the chooseScore class; thus, if you would want to modify the game to perhaps look for more scores, change what some scores mean, or whatever else you wish to do, that's the place to go first. After that, you'll want to check out the game class, since that's what calls it, and then the driver, since that's where the user interacts with the whole thing. Most of the class definitions are placed in yahtzee.h and yahtzee.cpp for the sake of promoting merge conflicts which were necessary for this project. Under normal circumstances, each class would typically be worked on in parallel through one header and cpp file per class. Evidence of merge conflict below:
 
 
-[Link to merge conflict evidence](https://falconbgsu-my.sharepoint.com/:i:/g/personal/xgschwi_bgsu_edu/Ef5NJqH8vPBAtjjCLZEVxFcBTnP-qbI3Hw0zlKiycduG0w?e=p3pdcu)
+***[Link to merge conflict evidence](https://falconbgsu-my.sharepoint.com/:i:/g/personal/xgschwi_bgsu_edu/Ef5NJqH8vPBAtjjCLZEVxFcBTnP-qbI3Hw0zlKiycduG0w?e=p3pdcu)***
 
-Notable Classes and Functions:
+***Notable Classes and Functions:***
 yahtzee.h and .cpp contains the classes for the die, dice, scorecard, and game.
 
 The Die class has the private variable `int val`, and public contstructor `Die()` to initialize the value of the die and the function `int rollDie()` which returns an randomly generated integer between 1 and 6.
@@ -30,5 +30,6 @@ The Scorecard class had a multitude of boolean variables to track whenever a sco
 
 The Game class has a private scorecard object, the `int play()` function to track the turns in the game and call functions to roll the dice and choose scores until 13 turns have been reached. 
 
-In HighScores.h and .cpp
-The HighScore class was implemented to track the top scores in arrays with the names and scores, and store them in a displaying leaderboard after the conclusion of each game.
+In HighScores.h and .cpp:
+
+The HighScore class was implemented to track the top scores in arrays with the names and scores, and store them in a leaderboard to be displayed after the conclusion of each game.
