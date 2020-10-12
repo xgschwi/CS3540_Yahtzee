@@ -22,7 +22,7 @@ Most of the most important functions are located within the chooseScore class; t
 ***Notable Classes and Functions:***
 yahtzee.h and .cpp contains the classes for the die, dice, scorecard, and game.
 
-The Die class has the private variable `int val`, and public contstructor `Die()` to initialize the value of the die and the function `int rollDie()` which returns an randomly generated integer between 1 and 6.
+The Die class has the private variable `int val`, and public contstructor `Die()` to initialize the value of the die and the function `int rollDie()` which returns a randomly generated integer between 1 and 6.
 
 The Dice class has the private integer array `int values[5]` which was initialized immediately with five 1s. There was also a private Die pointer to a pointer `Die **dice`. The public constructor `Dice()` allocated space for dice to hold 5 Die objects. The destructor `~Dice()` deallocates the die objects that are made so as to prevent memory leaks. The `int rollDice()` function called for every die object's `rollDie()` function in the `dice` and return an integer array of those values.
 
