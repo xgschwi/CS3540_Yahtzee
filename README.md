@@ -33,3 +33,6 @@ The Game class has a private scorecard object, the `int play()` function to trac
 In HighScores.h and .cpp:
 
 The HighScore class was implemented to track the top scores in arrays with the names and scores, and store them in a leaderboard to be displayed after the conclusion of each game.
+
+****Building****
+With the "init" command, we create a bin command. The "all" command complies all the cpp files into the bin. The "run" commands runs the completed, compiled program. Running the "clean" command removes both the bin and the main.exe file. And the "do_all" command does all the work and also cleans up after itself.
