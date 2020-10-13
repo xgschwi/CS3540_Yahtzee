@@ -35,7 +35,7 @@ In HighScores.h and .cpp:
 The HighScore class was implemented to track the top scores in arrays with the names and scores and store them in a leaderboard to be displayed after the conclusion of each game.
 
 ****Building****
-To start building the project using Make, the user must navigate to the project folder YahtzeeGame to use the make commands. Located inside this folder is the "Makefile" file that gives the user access to different steps of the building and running process of the Yahtzee Game. To begin to browse all the commands, the user may use a terminal window to type the commands `make` or `make help`. Both options work because help is the first make commands given, and help is the exact name of the command. This command displays the `make help`, `make init`, `make all`, `make run`, `make clean`, and `make do_all` commands. 
+To start building the project using Make, the user must navigate to the project folder YahtzeeGame to use the make commands. Located inside this folder is the "Makefile" file that gives the user access to different steps of the building and running process of the Yahtzee Game. To begin to browse all the commands, the user may use a terminal window to type the commands `make` or `make help`. Both options work because help is the first make command given, and help is the exact name of the command. This command displays the `make help`, `make init`, `make all`, `make run`, `make clean`, and `make do_all` commands. 
 
 With the "init" command, we create a bin directory in which the executable of the code will be placed in. 
 
