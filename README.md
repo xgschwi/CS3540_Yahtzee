@@ -35,4 +35,14 @@ In HighScores.h and .cpp:
 The HighScore class was implemented to track the top scores in arrays with the names and scores, and store them in a leaderboard to be displayed after the conclusion of each game.
 
 ****Building****
-With the "init" command, we create a bin command. The "all" command complies all the cpp files into the bin. The "run" commands runs the completed, compiled program. Running the "clean" command removes both the bin and the main.exe file. And the "do_all" command does all the work and also cleans up after itself.
+To start building the project using Make, the user must navigate to the project folder YahtzeeGame to use the make commands. Located inside this folder is the "Makefile" file that gives the user access to different steps of the building and running process of the Yahtzee Game. To begin to browse all the commands, the user may use a terminal window to type the commands "make" or "make help". Both options work because help is the first make commands given, and help is the exact name of the command. This command displays the "help", "init", "all", "run", "clean", and "do_all" commands. 
+
+With the "init" command, we create a bin directory in which the executable of the code will be placed in. 
+
+The "all" command uses the "init" command and complies all the cpp files into the bin directory and labels the executable "main.exe". The "init" command is used here to ensure the executable can be placed in the specified directory.
+
+The "run" command runs the completed, compiled program "main.exe" so the user can play the Yahtzee Game. 
+
+Running the "clean" command removes the bin directory and the main.exe file within it.
+
+The "do_all" command does all of the above, except for the help command. The do_all command will use the "all" command to invoke the "init" command and compile the executable into the bin. Then, the "run" command is called to run the executable "main.exe". Once the user is finished with the game, the "clean" command is called to remove the bin directory and the executable file. The purpose of "do_all" is to do all the work for the user so that the user can build and run the game in one command. This is also so an executable won't be left behind that the user would have to clean up. This removes the amount of work needed if the executable and bin directory were left behind as detectable changes for version control, like git, to detect and want commits for.
