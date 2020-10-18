@@ -24,3 +24,8 @@ do_all: ## do_all: Initializes directory, compiles code, and cleans up after run
 	make all
 	make run
 	make clear
+
+tests_all:
+	g++ -o tests/testing.exe -I ../tests -I ../YahtzeeGame yahtzee.cpp tests/tests.cpp
+	./tests/testing.exe
+	rm tests/testing.exe
