@@ -21,35 +21,62 @@ TEST_CASE("Dice can be rolled", "[dice]") {
 }
 
 TEST_CASE("Score starts at 0", "[score]"){
-    Scorecard score;
+    Scorecard score1;
 
-    REQUIRE(score.Scorecard == 0);
+    REQUIRE(score1.score == 0);
 }
 
-TEST_CASE("Full House gives 25 points"){
-    //Check 5 dice and see if 3 is one number and 2 is another
+TEST_CASE("Full House gives 25 points", "[score]"){
+    Dice dice;
+    dice.setvalues(1,1,1,2,2);
+
+    REQUIRE(score >= 25);
 }
 
-TEST_CASE("Small Straight gives 30 points"){
-    //Check 3 dice to see if they are the same number
+TEST_CASE("Small Straight gives 30 points", "[score]"){
+    Dice dice;
+    dice.setvalues(1,2,3,4,3);
+
+    REQUIRE(score >= 30);
 }
 
-TEST_CASE("Large Straight gives 40 points"){
-    //Check 4 dice to see if they are the same number
+TEST_CASE("Large Straight gives 40 points", "[score]"){
+    Dice dice;
+    dice.setvalues(1,2,3,4,5);
+
+    REQUIRE(score >= 40);
 }
 
-TEST_CASE("Yahtzee gives 50 points"){
-    //Check 5 dice to see if they are the same number
+TEST_CASE("Yahtzee gives 50 points", "[score]"){
+    Dice dice;
+    dice.setvalues(1,1,1,1,1);
+
+    REQUIRE(score >= 50);
 }
 
-TEST_CASE("Scoreboard puts each player in order"){
-    //Test 2 final scores and see if one is above the other on scoreboard
+TEST_CASE("Three of a kind checks sum", "[score]"){
+    Dice dice;
+    dice.setvalues(1,1,1,3,4);
+    int sum = 0;
+    int *a = dice.rollDice();
+    for(int i = 0; i < 5; i++) sum += a[i];
+
+    REQUIRE(sum == 10);
+}
+
+TEST_CASE("Four of a kind checks sum", "[score]"){
+    Dice dice;
+    dice.setvalues(1,1,1,1,4);
+    int sum = 0;
+    int *a = dice.rollDice();
+    for(int i = 0; i < 5; i++) sum += a[i];
+
+    REQUIRE(sum == 9);
 }
 
 TEST_CASE("Score resets after each game"){
-    //Make sure that after a game is played that score is reset
-}
+    games = 1;
+    Scorecard score1;
 
-TEST_CASE("Player can decide whether to continue playing the game or not"){
-    //Test that Yes/No works
+    REQUIRE(score1.score == 0);
 }
