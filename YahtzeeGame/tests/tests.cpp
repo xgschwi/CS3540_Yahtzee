@@ -5,8 +5,8 @@
 using namespace std;
 
 TEST_CASE("Die can be rolled", "[die]") {
-    
     Die die1;
+    
     REQUIRE(die1.rollDie() >= 1);
     REQUIRE(die1.rollDie() <= 6);
 }
@@ -22,6 +22,7 @@ TEST_CASE("Dice can be rolled", "[dice]") {
 
 TEST_CASE("Score starts at 0", "[score]"){
     Scorecard score;
+
     REQUIRE(score.Scorecard == 0);
 }
 
