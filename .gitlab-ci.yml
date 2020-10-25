@@ -11,6 +11,7 @@ build:
   # before_script:
   #   - apt update && apt -y install make autoconf
   script:
+    - cd YahtzeeGame
     - make do_all
     #- g++ yahtzeeDriver.cpp -o mybinary
   #artifacts:
@@ -25,5 +26,6 @@ build:
 test:
   stage: test
   script:
+    - cd YahtzeeGame
     - make tests_all
     #- ./runmytests.sh
