@@ -6,6 +6,7 @@ help : ## help: Displays a menu of commands accesed by make <command>
 	@echo "	run: Runs compiled program main.exe in bin directory"
 	@echo "	clear: Removes bin directory and main.exe"
 	@echo "	do_all: Initializes directory, compiles code, and cleans up after running the code"
+	@echo " tests_all: Compiles the tests.cpp into an executable where the test cases are ran, then the build is removed."
 
 init: ## init: Creates bin directory
 	mkdir bin
@@ -25,7 +26,7 @@ do_all: ## do_all: Initializes directory, compiles code, and cleans up after run
 	make run
 	make clear
 
-tests_all:
+tests_all: ## tests_all: Compiles the tests.cpp into an executable where the test cases are ran, then the build is removed.
 	g++ -o tests/testing.exe -I ../tests -I ../YahtzeeGame yahtzee.cpp tests/tests.cpp
 	./tests/testing.exe
 	rm tests/testing.exe
