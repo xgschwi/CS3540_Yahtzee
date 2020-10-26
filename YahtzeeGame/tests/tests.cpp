@@ -21,9 +21,87 @@ TEST_CASE("Dice can be rolled", "[dice]") {
 }
 
 TEST_CASE("Score starts at 0", "[score]"){
-    ScoreCard score1;
+    ScoreCard scoreC;
 
-    REQUIRE(score1.score == 0);
+    REQUIRE(scoreC.score == 0);
+}
+TEST_CASE("Testing Aces", "[aceF]") {
+    int a[5] = {1,1,1,2,3};
+    ScoreCard scoreC;
+    int counter = 0;
+
+    for (int i = 0; i < 5; i++) {
+		if (a[i] == 1) {
+			counter++;
+		}
+    }
+    
+    REQUIRE(scoreC.aceF(counter) == 3);
+}
+
+TEST_CASE("Testing Twos", "[twoF]") {
+    int a[5] = {1,1,2,2,3};
+    ScoreCard scoreC;
+        int counter = 0;
+
+    for (int i = 0; i < 5; i++) {
+		if (a[i] == 2) {
+			counter++;
+		}
+    }
+    REQUIRE(scoreC.twoF(counter) == 4);
+}
+
+TEST_CASE("Testing Threes", "[threeF]") {
+    int a[5] = {3,1,3,2,3};
+    ScoreCard scoreC;
+    int counter = 0;
+
+    for (int i = 0; i < 5; i++) {
+		if (a[i] == 3) {
+			counter++;
+		}
+    }
+    REQUIRE(scoreC.threeF(counter) == 9);
+}
+
+TEST_CASE("Testing Fours", "[fourF]") {
+    int a[5] = {1,4,1,4,4};
+    ScoreCard scoreC;
+        int counter = 0;
+
+    for (int i = 0; i < 5; i++) {
+		if (a[i] == 4) {
+			counter++;
+		}
+    }
+    REQUIRE(scoreC.fourF(counter) == 12);
+}
+
+TEST_CASE("Testing Fives", "[fiveF]") {
+    int a[5] = {5,5,1,5,3};
+    ScoreCard scoreC;
+        int counter = 0;
+
+    for (int i = 0; i < 5; i++) {
+		if (a[i] == 5) {
+			counter++;
+		}
+    }
+    REQUIRE(scoreC.fiveF(counter) == 15);
+}
+
+TEST_CASE("Testing Sixes", "[sixF]") {
+    int a[5] = {1,6,1,6,3};
+    int counter = 0;
+
+    for (int i = 0; i < 5; i++) {
+		if (a[i] == 6) {
+			counter++;
+		}
+    }
+    ScoreCard scoreC;
+    REQUIRE(scoreC.sixF(counter) == 12);
 }
 
 TEST_CASE("Full House gives 25 points", "[fullHouseF]"){
