@@ -35,7 +35,7 @@ In HighScores.h and .cpp:
 The HighScore class was implemented to track the top scores in arrays with the names and scores and store them in a leaderboard to be displayed after the conclusion of each game.
 
 ****Building****
-To start building the project using Make, the user must navigate to the project folder YahtzeeGame to use the make commands. Located inside this folder is the "Makefile" file that gives the user access to different steps of the building and running process of the Yahtzee Game. To begin to browse all the commands, the user may use a terminal window to type the commands `make` or `make help`. Both options work because help is the first make command given, and help is the exact name of the command. This command displays the `make help`, `make init`, `make all`, `make run`, `make clear`, and `make do_all` commands. 
+To start building the project using Make, the user must navigate to the project folder YahtzeeGame to use the make commands. Located inside this folder is the "Makefile" file that gives the user access to different steps of the building and running process of the Yahtzee Game. To begin to browse all the commands, the user may use a terminal window to type the commands `make` or `make help`. Both options work because help is the first make command given, and help is the exact name of the command. This command displays the `make help`, `make init`, `make all`, `make run`, `make clear`, `make do_all`, `make tests_all` commands. 
 
 With the "init" command, we create a bin directory in which the executable of the code will be placed in. 
 
@@ -47,5 +47,17 @@ Running the "clear" command removes the bin directory and the main.exe file with
 
 The "do_all" command does all of the above, except for the help command. The do_all command will use the "all" command to invoke the "init" command and compile the executable into the bin. Then, the "run" command is called to run the executable "main.exe". Once the user is finished with the game, the "clear" command is called to remove the bin directory and the executable file. The purpose of "do_all" is to do all the work for the user so that the user can build and run the game in one command. This is also so an executable won't be left behind that the user would have to clean up. This removes the amount of work needed if the executable and bin directory were left behind as detectable changes for version control, like git, to detect and want commits for.
 
+The "tests_all" command will compile the tests.cpp file, which uses Catch2, to run test cases on the software. The build of the testing executable will then run and show what test cases have passed and failed with the Yahtzee Game. Then, the test build will be removed.
 
 [Sample Building Transcript](https://falconbgsu-my.sharepoint.com/:t:/g/personal/xgschwi_bgsu_edu/EcijVrgG17pPmIIJv0lvNucBJcocFtSQQ_LBa691TZNfIw?e=Ekxd1i)
+
+***Testing***
+To test the software, Catch2 was integrated into this project. Implementing Catch2 was not too difficult because the given hpp file for Catch2 was readily available on github, and the hpp file was added into the test folder in the repository. With the hpp file in the repository, our team was able to include the hpp file, make a definition statement to use the Catch2 code, and make test cases. To make test cases, the keyword TEST_CASE can be used to define the message for the test, and, inside this, the keyword REQUIRE can be used to test a conditional statement. This conditional statement will determine what test cases pass and fail. The test cases were run on scoring functions and dice rolling functions.
+
+***Statement of Contributions***
+
+- **Xavier Gschwind:** Added Catch2 hpp file into repository
+- **Xavier Gschwind:** Added test cases to tests.cpp
+- **Xavier Gschwind:** Edited the yml file for CI/CD to use make file commands
+- **Nicholas McBride:** Added test cases
+- **Cameron Taylor:** Added yml file and added test and build stages for CI/CD
